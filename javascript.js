@@ -5,11 +5,16 @@ function createGrid(){
         for (let j = 0; j < 16; j++) {
             let gridSquare = document.createElement('div');
 
+            // Calculate the grid's size
+            const squareSide = container.offsetWidth / 16;
+
+            // Override grid dimensions to maintain square grid
+            gridSquare.setAttribute('style', `width: ${squareSide}px; height: ${squareSide}px`);
+
             // Assign a class to each div within container
             gridSquare.classList.add('grid-square');
 
             gridSquare.addEventListener('mouseenter', changeColor);
-            //gridSquare.addEventListener('mouseleave', changeColor);
 
             // Append each div to container
             container.appendChild(gridSquare);
@@ -26,6 +31,15 @@ function changeColor(e) {
     }
 }
 
+function linkButton() {
+    const resizeBtn = document.querySelector('#resize-btn');
+    resizeBtn.addEventListener('click', resizeGrid);
+}
+
+function resizeGrid() {
+
+}
+
 
 // Get reference to body
 const body = document.querySelector('body');
@@ -37,3 +51,5 @@ container.classList.add('container');
 body.appendChild(container);
 
 createGrid();
+
+linkButton();

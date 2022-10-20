@@ -1,13 +1,10 @@
 .container {
     display: flex;
     flex-flow: row wrap;
-    width: 384px;
+    width: 400px;
+    height: 400px;
 }
 
 .grid-square {
-    width: 20px;
-    height: 20px;
-    margin: 1px;
     flex: none;
-    border: 1px solid black;
 }
