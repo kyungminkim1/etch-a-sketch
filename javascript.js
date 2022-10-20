@@ -38,14 +38,28 @@ function linkButton() {
 
 function resizeGrid() {
     // Get the new grid size from user
-    const gridSize = parseInt(prompt('Enter a number between 1-100'));
+    const gridSize = prompt('Enter a number between 1-100');
     
+    // Check if user cancelled input
+    if (gridSize === null) return;
+
+    // Check if input is not a number
+    else if (isNaN(gridSize)) alert('Your input is not a number!');
+
+    // Check if input is higher than 100 or less than 1
+    else if (gridSize > 100 || gridSize < 1) {
+        // Tell user it is invalid input
+        alert('Please provide a valid input!');
+        return;
+    }
     // Delete existing squares within container
     deleteGrid();
 
     // Create a new grid
-    createGrid(gridSize);
+    createGrid(parseInt(gridSize));
+    
 }
+
 
 function deleteGrid() {
     // Get all grid squares
