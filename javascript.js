@@ -37,7 +37,10 @@ function linkButton() {
 }
 
 function resizeGrid() {
-
+    // Get the new grid size from user
+    const gridSize = prompt('Enter a number between 1-100');
+    // Reset the grid
+    createGrid();
 }
 
 
