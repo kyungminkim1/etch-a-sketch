@@ -1,7 +1,7 @@
 // Create function createGrid()
 function createGrid(gridSize){
     // Calculate the grid's size
-    const squareSide = container.offsetWidth / gridSize;
+    const squareSide = (container.offsetWidth - 2) / gridSize;
 
     // Create a NxN square divs using nested loop
     for (let i = 0; i < gridSize; i++) {
