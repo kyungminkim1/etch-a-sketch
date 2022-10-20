@@ -1,12 +1,12 @@
 // Create function createGrid()
 function createGrid(gridSize){
-    // Create 16x16 (= 196) square divs using nested loop
+    // Calculate the grid's size
+    const squareSide = container.offsetWidth / gridSize;
+
+    // Create a NxN square divs using nested loop
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
             let gridSquare = document.createElement('div');
-
-            // Calculate the grid's size
-            const squareSide = container.offsetWidth / gridSize;
 
             // Override grid dimensions to maintain square grid
             gridSquare.setAttribute('style', `width: ${squareSide}px; height: ${squareSide}px`);
@@ -39,8 +39,19 @@ function linkButton() {
 function resizeGrid() {
     // Get the new grid size from user
     const gridSize = parseInt(prompt('Enter a number between 1-100'));
-    // Reset the grid size
+    
+    // Delete existing squares within container
+    deleteGrid();
+
+    // Create a new grid
     createGrid(gridSize);
+}
+
+function deleteGrid() {
+    // Get all grid squares
+    let gridSquares = document.querySelectorAll('.grid-square');
+    // Delete all grid squares
+    gridSquares.forEach(div => div.remove());
 }
 
 
