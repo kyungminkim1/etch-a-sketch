@@ -7,10 +7,23 @@ function createGrid(){
 
             // Assign a class to each div within container
             gridSquare.classList.add('grid-square');
+
+            gridSquare.addEventListener('mouseenter', changeColor);
+            //gridSquare.addEventListener('mouseleave', changeColor);
+
             // Append each div to container
             container.appendChild(gridSquare);
             }
         }
+}
+
+function changeColor(e) {
+    if (this.style.backgroundColor === 'black') {
+        this.style.backgroundColor = null;
+    }
+    else{
+        this.style.backgroundColor = 'black';
+    }
 }
 
 
